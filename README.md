@@ -27,7 +27,7 @@ Nota: estos formularios no estan dentro de la interfaz porque entiendo que no de
 
 ## Pruebas Realizadas
 
-Ver archivo titulado "Pruebas Proyecto Python CH.xlsx" el cual se encuentra en el repositorio
+Ver archivo titulado "Casos de prueba proyecto python - Ramiro Medina.xlsx" el cual se encuentra en el repositorio
 
 ## Video demostración en la carpeta de drive
 
