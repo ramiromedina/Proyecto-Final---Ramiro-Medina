@@ -29,6 +29,6 @@ Nota: estos formularios no estan dentro de la interfaz porque entiendo que no de
 
 Ver archivo titulado "Casos de prueba proyecto python - Ramiro Medina.xlsx" el cual se encuentra en el repositorio
 
-## Video demostración en la carpeta de drive
+## Video demostración
 
-https://drive.google.com/drive/folders/15bwvylc-Qx-KopIzeyf5OgnpjXLdOzkJ?usp=share_link
+https://drive.google.com/file/d/1jDkdE5FMW1z4-OaI9fmF7XPOS-qcSEzC/view?usp=share_link
