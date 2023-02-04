@@ -1,0 +1,40 @@
+{% extends "AppProyecto/base.html" %}
+{% block contenido %}
+<p class="text-center fs-2 text">Editar Datos de Usuario</p>
+            
+{% if miFormulario.errors %}
+
+<p style="color: red;"> Están mal los datos, revisar</p>
+
+{% endif %}
+
+<div class="container">
+<form action="" method="POST">{% csrf_token %}
+    
+    <div class= "mb-3 form-outline">
+        <p>Email:</p>
+        <input type="email" name="email" class="form-control">
+    </div>
+    <div class=" mb-3 form-outline">
+        <p>Nombre:</p>
+        <input type="text" name="nombre" class="form-control">
+    </div>
+    <div class="mb-3 form-outline">
+        <p>Apellido:</p>
+        <input type="text" name="apellido" class="form-control">
+    </div>
+    <div class="mb-3 form-outline">
+        <p>Contraseña:</p>
+        <input type="password" name="contrasenia" class="form-control">
+    </div>
+    <div class="mb-3 form-outline">
+        <p>Repetir contraseña:</p>
+        <input type="password" name="repetircontrasenia" class="form-control">
+    </div>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <input type="submit" value="Registrarte" class="btn btn-success btn-lg">
+    </div>
+
+</form>
+</div>
+{% endblock %}

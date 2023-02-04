@@ -1,0 +1,45 @@
+{% extends "AppProyecto/base.html" %}
+
+{% block contenido %}
+<!--Aquí va lo que cambia, y lo asociado a está vista :) -->
+    <p class="text-center fs-2 text">Formulario - Editar Taza</p>
+        
+    {% if miFormulario.errors %}
+
+    <p style="color: red;"> Están mal los datos, revisar</p>
+
+    {% endif %}
+
+    <form action="" method="POST">{% csrf_token %}
+
+        <div class=" mb-3 form-outline">
+            <p>Categoria:</p>
+            <input type="text" name="categoria" class="form-control">
+        </div>
+        <div class=" mb-3 form-outline">
+            <p>Nombre:</p>
+            <input type="text" name="nombre" class="form-control">
+        </div>
+        <div class="mb-3 form-outline">
+            <p>Precio:</p>
+            <input type="number" name="precio" class="form-control">
+        </div>
+        <div class="mb-3 form-outline">
+            <p>Información:</p>
+            <input type="text" name="informacion" class="form-control">
+        </div>
+        <div class="mb-3 form-outline">
+            <p>Colores:</p>
+            <input type="text" name="colores" class="form-control">
+        </div>
+        <div class="mb-3 form-outline">
+            <p>Imagen de Taza:</p>
+            <input type="text" name="imagenTaza" class="form-control">
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <input type="submit" value="Enviar" class="btn btn-success btn-lg">
+        </div>
+
+    </form>
+
+{% endblock %}

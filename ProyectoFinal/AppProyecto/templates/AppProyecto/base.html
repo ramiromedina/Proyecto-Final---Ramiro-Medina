@@ -1,0 +1,124 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" type="text/css" />
+
+    <title>geekhouse</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'Inicio' %}"><img style="border-radius: 75px; margin: 5px 0px 20px 100px;" src="{% static 'imagenes/geekhouse.png' %}" alt="" width="150"></a>
+        
+        {% if request.user.is_authenticated %}
+            <p class="text-end fs-3 text position-absolute top-0 end-0" style="margin-right: 30px; margin-top: 20px;">¡Hola, {{user.username}}!</p>
+            <a href="{% url 'EditarPerfil' %}"><button class="btn btn-dark btn btn-primary me-md-2 btn-sm" style="margin-left: 840px; margin-top: 60px; margin-bottom: 10px;">Editar Perfil</button></a>
+            <a href="{% url 'Logout' %}"><button class="btn btn-dark btn btn-primary btn-sm" style="margin-top: 60px; margin-bottom: 10px;">Cerrar Sesión</button></a>
+        {% else %}
+            <a href="{% url 'Login' %}"><button class="btn btn-dark btn btn-primary me-md-2 btn-lg" style="margin-left:740px">Iniciar Sesión</button></a>
+            <a href="{% url 'Registro' %}"><button class="btn btn-dark btn btn-primary btn-lg">Registrarse</button></a>
+        {% endif %}
+        
+        
+    </header>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary"  data-bs-theme="dark">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>
+            <a class="navbar-brand" href="{% url 'Tazas' %}">Tazas</a>
+            <a class="navbar-brand" href="{% url 'Remeras' %}">Remeras</a>
+            <a class="navbar-brand" href="{% url 'Funkos' %}">Funkos</a>
+            <a class="navbar-brand" href="{% url 'SobreMi' %}">Sobre Mi</a>
+        </div>
+    </nav>
+
+    <section style="padding:100px 50px;">
+        {% block contenido %}
+        {% endblock %}
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-dark text-white">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+        <!-- Left -->
+        <div class="me-5 d-none d-lg-block">
+            <span>Siguenos en nuestras redes sociales:</span>
+        </div>
+        <!-- Left -->
+    
+        <!-- Right -->
+        <div>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.facebook.com/geekhouse.lv" role="button" style="margin-right:80px">
+                <i class="bi-facebook fs-3"></i>
+            </a>
+            <a class="btn btn-outline-light btn-floating m-1" href="https://www.instagram.com/geekhouse.kz/" role="button">
+                <i class="bi-instagram fs-3"></i>
+            </a>
+        </div>
+        <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+    
+        <!-- Section: Links  -->
+        <section class="">
+        <div class="container text-center text-md-start mt-5">
+            <!-- Grid row -->
+            <div class="row mt-3">
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-4 col-xl-3">
+                <!-- Content -->
+                <img style="border-radius: 75px;" src="{% static 'imagenes/geekhouse.png' %}" alt="" width="150">
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4">
+                Productos
+                </h6>
+                <p class="text-white">
+                <a href="{% url 'Tazas' %}" class="text-reset">Tazas</a>
+                </p>
+                <p class="text-white">
+                <a href="{% url 'Remeras' %}" class="text-reset">Remeras</a>
+                </p>
+                <p class="text-white">
+                <a href="{% url 'Funkos' %}" class="text-reset">Funkos</a>
+                </p>
+            </div>
+            <!-- Grid column -->
+    
+            <!-- Grid column -->
+            <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <!-- Links -->
+                <h6 class="text-uppercase fw-bold mb-4 text-white">Contact</h6>
+                <p class="text-white"><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                <p class="text-white">
+                <i class="fas fa-envelope me-3"></i>
+                info@geekhouse.com
+                </p>
+                <p class="text-white"><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                <p class="text-white"><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+            </div>
+            <!-- Grid column -->
+            </div>
+            <!-- Grid row -->
+        </div>
+        </section>
+        <!-- Section: Links  -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+        © 2023 Copyright: geekhouse
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{% extends "AppProyecto/base.html" %}
+
+{% block contenido %}
+
+{% if remera %}
+
+    <p class="text-center font-weight-bold"> Estamos buscando: {{nombre}} </p>
+
+    {% for i in remera %}
+    <img style="margin-left: 390px;" src="{{i.imagenRemera}}" alt="" height="400px">
+    <div class="container">
+        <p class="text-uppercase font-weight-bold text-secondary text-center" style="font-size: 12px; font-weight: 700;letter-spacing: 2px; margin-top: 5px;">{{i.categoria}}</p>
+        <h3 class="text-center">{{i.nombre}}</h3>
+        <p class="font-weight-bold text-center">{{i.talle}}</p>
+        <p class="text-success font-weight-bold text-center" style="font-weight:bolder;">${{i.precio}}</p>
+    </div>
+    
+    {% endfor %}
+
+
+{% else %}
+</p> No hay datos con esa descripción. </p>
+
+{% endif %}
+
+<p style="color: red;"> {{respuesta}}</p> 
+
+
+{% endblock %}

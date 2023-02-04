@@ -1,0 +1,25 @@
+{% extends "AppProyecto/base.html" %}
+
+{% block contenido %}
+<p class="text-center fs-2 text">Iniciar Sesión</p>
+<div class="container">
+    <form action="" method="POST">
+        {% csrf_token %}
+        
+        <div class= "mb-3 form-outline">
+            <p>Nombre de usuario:</p>
+            <input type="text" name="username" class="form-control">
+        </div>
+        <div class=" mb-3 form-outline">
+            <p>Contraseña:</p>
+            <input type="password" name="password" class="form-control">
+        </div>
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <input type="submit" value="Iniciar Sesión" class="btn btn-success btn-lg">
+        </div>
+    
+    
+    </form>
+<p class="text-center" style="margin-top: 20px;">Si no tienes cuenta, <a href="{% url 'Registro' %}">registrate</a></p>
+</div>
+{% endblock %}

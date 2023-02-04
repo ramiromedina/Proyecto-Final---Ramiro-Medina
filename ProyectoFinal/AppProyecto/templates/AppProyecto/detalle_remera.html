@@ -1,0 +1,11 @@
+{% extends "AppProyecto/base.html" %}
+
+{% block contenido %}
+<img style="margin-left: 440px;" src="{{remera.imagenRemera}}" alt="" height="400px">
+<div class="container">
+    <p class="text-uppercase font-weight-bold text-secondary text-center" style="font-size: 12px; font-weight: 700;letter-spacing: 2px; margin-top: 5px;">{{remera.categoria}}</p>
+    <h3 class="text-center">{{remera.nombre}}</h3>
+    <p class="font-weight-bold text-center">{{remera.talle}}</p>
+    <p class="text-success font-weight-bold text-center" style="font-weight:bolder;">${{remera.precio}}</p>
+</div>
+{% endblock %}
